@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { StyleSheet, View } from 'react-native'
+import { NavigationEvents } from 'react-navigation'
 import Spacer from '../components/Spacer'
 import ClickLink from '../components/ClickLink'
 import AuthForm from '../components/AuthForm'
@@ -11,6 +12,7 @@ const SignupScreen = ({ navigation }) => {
 
 
     return <View style={styles.container}>
+        <NavigationEvents onWillBlur={clearError}/>
         <AuthForm
             onButtonClick={(email, password) => {
                 signUp({ email, password })
@@ -22,7 +24,6 @@ const SignupScreen = ({ navigation }) => {
                 title={"Already have an account?\n Sign In instead."}
                 callBack={() => {
                     navigation.navigate('Signin')
-                    clearError()
                 }} />
         </Spacer>
     </View>

@@ -33,9 +33,9 @@ const AuthForm = ({ isSignUp, onButtonClick, errorMessage }) => {
         </Spacer>
         {errorMessage ? <Text style={styles.errorMessage}>{errorMessage} </Text> : null}
         <Spacer>
-            <Button type="solid" raised={true} title={isSignUp ? "Sign Up" : "Sign In"} onPress={() => {
+            <Button type="solid" raised={true} title={isSignUp ? "Sign Up" : "Sign In"} onPress={() =>
                 onButtonClick(email, password)
-            }} />
+                } />
         </Spacer>
     </View>
 }
